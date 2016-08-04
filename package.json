@@ -1,0 +1,22 @@
+{
+  "name": "tiny-compiler",
+  "version": "1.0.0",
+  "description": "A tiny compiler for convert Polish Notation to JavaScript code",
+  "main": "compiler.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixcai/tiny-compiler.git"
+  },
+  "keywords": [
+    "compiler"
+  ],
+  "author": "pixcai",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pixcai/tiny-compiler/issues"
+  },
+  "homepage": "https://github.com/pixcai/tiny-compiler#readme"
+}

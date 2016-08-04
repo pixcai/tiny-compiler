@@ -10,16 +10,16 @@ let CHARACTER = /[a-z]/i
 
 /**
  * Tokenizer
- * @param  {String} input source code
- * @return {Array} 
+ * @param  {String} input
+ * @return {Array} tokens
  */
 function tokenizer(input) {
   /**
    * expected tokens is:
    * [{ type: 'paren', value: '(' },
    *  { type: 'paren', value: '(' },
-   *  { type: 'num', value: [0-9] },
-   *  { type: 'str', value: [a-z] },
+   *  { type: 'num', value: /[0-9]+/ },
+   *  { type: 'str', value: /[a-z]+/ },
    *  { type: 'func', value: name }]
    */
   let tokens = []
@@ -70,24 +70,30 @@ function tokenizer(input) {
   return tokens
 }
 
+/**
+ * Parser
+ * @param  {Array} tokens
+ * @return {Object} ast
+ */
 function parser(tokens) {
-	let ast = {
-		type: 'Program',
-		body: []
-	}
-}
-
-function transformer(ast) {
 
 }
 
-function codeGenerator(newAst) {
+/**
+ * CodeGenerator
+ * @param  {Object} ast
+ * @return {String} source code
+ */
+function codeGenerator(ast) {
 
 }
 
-function compiler(input) {
-  let ast = parser(tokenizer(input))
-  return codeGenerator(transformer(ast))
+function compile(input) {
+  let tokens = tokenizer(input)
+  let ast = parser(tokens)
+  let output = codeGenerator(ast)
+
+  return output
 }
 
-module.exports = compiler
+module.exports = compile
